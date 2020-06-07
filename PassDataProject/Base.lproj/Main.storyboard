@@ -51,24 +51,35 @@
                                 </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuy-n0-5yA"/>
-                                    <segue destination="oOJ-7E-2Iw" kind="show" id="O1v-Zv-f4W"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-9O-QyT">
+                                <rect key="frame" x="186" y="690.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bMH-9O-QyT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="5fh-Ta-rXc"/>
                             <constraint firstItem="XEM-hb-G99" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bbd-Tf-wh8"/>
+                            <constraint firstItem="bMH-9O-QyT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TqV-zQ-sHG"/>
                             <constraint firstItem="Vug-T7-r48" firstAttribute="top" secondItem="XEM-hb-G99" secondAttribute="bottom" constant="76" id="Wg5-bN-lUs"/>
                             <constraint firstItem="Vug-T7-r48" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c60-PJ-K0C"/>
                             <constraint firstItem="XEM-hb-G99" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="dAJ-gf-4c7"/>
                             <constraint firstItem="2Zg-yN-LbV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iO7-P0-l4n"/>
                             <constraint firstItem="2Zg-yN-LbV" firstAttribute="top" secondItem="Vug-T7-r48" secondAttribute="bottom" constant="100" id="oZf-yU-PmL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bMH-9O-QyT" secondAttribute="bottom" constant="151" id="s1S-zq-Zga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bMH-9O-QyT" secondAttribute="trailing" constant="30" id="wKQ-TF-GlY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="loginTF" destination="Tr1-SX-pdk" id="ZoD-rR-3Oi"/>
                         <outlet property="passwordTF" destination="6PS-Ak-V2d" id="lGr-hw-xLF"/>
+                        <outlet property="resultLabel" destination="bMH-9O-QyT" id="BC5-tk-FnF"/>
+                        <segue destination="oOJ-7E-2Iw" kind="show" identifier="detailSegue" id="wvp-b0-boo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,12 +94,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-RB-6c9">
-                                <rect key="frame" x="165.5" y="141" width="83" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgx-ee-HMn">
                                 <rect key="frame" x="157.5" y="444" width="99" height="36"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -103,24 +108,34 @@
                                     <action selector="exit:" destination="oOJ-7E-2Iw" eventType="touchUpInside" id="Fj5-XY-ybF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-RB-6c9">
+                                <rect key="frame" x="166" y="141" width="82" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kgx-ee-HMn" firstAttribute="centerX" secondItem="fmV-TF-DOL" secondAttribute="centerX" id="78P-vv-dZg"/>
                             <constraint firstItem="fzU-RB-6c9" firstAttribute="centerX" secondItem="fmV-TF-DOL" secondAttribute="centerX" id="Et2-vQ-60y"/>
                             <constraint firstItem="Kgx-ee-HMn" firstAttribute="top" secondItem="fzU-RB-6c9" secondAttribute="bottom" constant="261" id="Sjk-ma-PIC"/>
+                            <constraint firstItem="fzU-RB-6c9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fmV-TF-DOL" secondAttribute="leading" constant="30" id="Wrq-HE-EO9"/>
                             <constraint firstItem="fzU-RB-6c9" firstAttribute="top" secondItem="fmV-TF-DOL" secondAttribute="top" constant="97" id="a2A-2F-vzv"/>
+                            <constraint firstItem="fmV-TF-DOL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fzU-RB-6c9" secondAttribute="trailing" constant="30" id="e4c-hn-dUf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fmV-TF-DOL"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kjh-T6-03f"/>
                     <connections>
                         <outlet property="label" destination="fzU-RB-6c9" id="LkZ-cd-8Z7"/>
+                        <segue destination="aJi-lD-8wi" kind="unwind" identifier="unwindSegue" unwindAction="unwindSegueToMainStoryboardWithSegue:" id="Sq5-SH-ifi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEy-pK-Fzx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aJi-lD-8wi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="133.74384236453201"/>
+            <point key="canvasLocation" x="918.84057971014499" y="133.25892857142856"/>
         </scene>
     </scenes>
 </document>
